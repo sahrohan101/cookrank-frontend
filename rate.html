@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rate Today’s Chef</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="requireAuth(); loadUI(); initMembers(); initDate();">
+
+<button onclick="logout()" class="btn danger" style="float:right">Logout</button>
+
+<h2>Add Rating</h2>
+
+<form onsubmit="saveRating(event)">
+  <input type="date" id="date" required><br>
+  <select id="chefSelect"></select><br>
+  <input id="taste" type="number" placeholder="Taste 1-5" min="1" max="5" required><br>
+  <input id="hygiene" type="number" placeholder="Hygiene 1-5" min="1" max="5" required><br>
+  <input id="effort" type="number" placeholder="Effort 1-5" min="1" max="5" required><br>
+  <button class="btn primary">Save</button>
+</form>
+
+<a href="leaderboard.html" class="btn">Leaderboard</a>
+
+<table border="1" id="history"></table>
+
+<script src="script.js"></script>
+<script src="rate.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CookRank - Apartment Cooking Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>CookRank 🧑‍🍳</h1>
+    <p class="subtitle">
+      Apartment cooking leaderboard for Rohan, Amit, Sajan, Rajan, Saurav & Kuldeep
+    </p>
+
+    <!-- Add Rating Section -->
+    <section class="card">
+      <h2>Add Today's Rating</h2>
+      <form id="ratingForm">
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" required />
+        </div>
+
+        <div class="form-group">
+          <label for="chefSelect">Today's Chef</label>
+          <select id="chefSelect" required>
+            <!-- JS will fill members -->
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="taste">Taste (1-5)</label>
+            <input type="number" id="taste" min="1" max="5" required />
+          </div>
+
+          <div class="form-group">
+            <label for="hygiene">Hygiene (1-5)</label>
+            <input type="number" id="hygiene" min="1" max="5" required />
+          </div>
+
+          <div class="form-group">
+            <label for="effort">Effort (1-5)</label>
+            <input type="number" id="effort" min="1" max="5" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn primary">Save Rating</button>
+        <button type="button" id="clearAll" class="btn danger">Clear All Data</button>
+      </form>
+    </section>
+
+    <!-- History Section -->
+    <section class="card">
+      <h2>Rating History</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Chef</th>
+              <th>Taste</th>
+              <th>Hygiene</th>
+              <th>Effort</th>
+              <th>Average</th>
+            </tr>
+          </thead>
+          <tbody id="ratingTableBody">
+            <!-- JS will fill -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="card">
+      <h2>Leaderboard 🏆</h2>
+      <p class="small-note">
+        Ranking based on average of (Taste + Hygiene + Effort) / 3
+      </p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Chef</th>
+              <th>Avg Taste</th>
+              <th>Avg Hygiene</th>
+              <th>Avg Effort</th>
+              <th>Overall Avg</th>
+              <th>Total Dishes</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody">
+            <!-- JS will fill -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    Made for our apartment by <strong>CookRank</strong> 😄
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
